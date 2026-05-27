@@ -1,0 +1,145 @@
+:root {
+  /* LIGHT MODE BARVY */
+  --text-light: #6b6375;
+  --text-h-light: #08060d;
+  --bg-light: #e1e1e1;
+  --bg2-light: #efefef;
+  --border-light: #e5e4e7;
+  --code-bg-light: #f4f3ec;
+  --accent-light: #aa3bff;
+  --accent-bg-light: rgba(170, 59, 255, 0.1);
+  --accent-border-light: rgba(170, 59, 255, 0.5);
+  --social-bg-light: rgba(244, 243, 236, 0.5);
+  --shadow-light: rgba(0, 0, 0, 0.1) 0 0.694rem 1.042rem -0.208rem, rgba(0, 0, 0, 0.05) 0 0.278rem 0.417rem -0.139rem;
+  --input-bg-light: #f9f9fb;
+
+  /* DARK MODE BARVY */
+  --text-dark: #9ca3af;
+  --text-h-dark: #f3f4f6;
+  --bg-dark: #16171d;
+  --bg2-dark: #24252e;
+  --border-dark: #2e303a;
+  --code-bg-dark: #1f2028;
+  --accent-dark: #c084fc;
+  --accent-bg-dark: rgba(192, 132, 252, 0.15);
+  --accent-border-dark: rgba(192, 132, 252, 0.5);
+  --social-bg-dark: rgba(47, 48, 58, 0.5);
+  --shadow-dark: rgba(0, 0, 0, 0.4) 0 0.694rem 1.042rem -0.208rem, rgba(0, 0, 0, 0.25) 0 0.278rem 0.417rem -0.139rem;
+  --input-bg-dark: #1f2028;
+
+  /* VÝCHOZÍ PŘIŘAZENÍ (LIGHT) */
+  --text: var(--text-light);
+  --text-h: var(--text-h-light);
+  --bg: var(--bg-light);
+  --bg2: var(--bg2-light);
+  --border: var(--border-light);
+  --code-bg: var(--code-bg-light);
+  --accent: var(--accent-light);
+  --accent-bg: var(--accent-bg-light);
+  --accent-border: var(--accent-border-light);
+  --social-bg: var(--social-bg-light);
+  --shadow: var(--shadow-light);
+  --input-bg: var(--input-bg-light);
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font-size: 90%; 
+  line-height: 1.45;
+  font-family: var(--sans);
+  letter-spacing: 0.013rem;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --text: var(--text-dark);
+    --text-h: var(--text-h-dark);
+    --bg: var(--bg-dark);
+    --bg2: var(--bg2-dark);
+    --border: var(--border-dark);
+    --code-bg: var(--code-bg-dark);
+    --accent: var(--accent-dark);
+    --accent-bg: var(--accent-bg-dark);
+    --accent-border: var(--accent-border-dark);
+    --social-bg: var(--social-bg-dark);
+    --shadow: var(--shadow-dark);
+    --input-bg: var(--input-bg-dark);
+  }
+}
+
+:root[data-theme="dark"] {
+  --text: var(--text-dark);
+  --text-h: var(--text-h-dark);
+  --bg: var(--bg-dark);
+  --bg2: var(--bg2-dark);
+  --border: var(--border-dark);
+  --code-bg: var(--code-bg-dark);
+  --accent: var(--accent-dark);
+  --accent-bg: var(--accent-bg-dark);
+  --accent-border: var(--accent-border-dark);
+  --social-bg: var(--social-bg-dark);
+  --shadow: var(--shadow-dark);
+  --input-bg: var(--input-bg-dark);
+}
+
+:root[data-theme="light"] {
+  --text: var(--text-light);
+  --text-h: var(--text-h-light);
+  --bg: var(--bg-light);
+  --bg2: var(--bg2-light);
+  --border: var(--border-light);
+  --code-bg: var(--code-bg-light);
+  --accent: var(--accent-light);
+  --accent-bg: var(--accent-bg-light);
+  --accent-border: var(--accent-border-light);
+  --social-bg: var(--social-bg-light);
+  --shadow: var(--shadow-light);
+  --input-bg: var(--input-bg-light);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.889rem;
+  letter-spacing: -0.117rem;
+}
+
+h2 {
+  font-size: 1.667rem;
+  letter-spacing: -0.017rem;
+}
+
+@media (max-width: 64rem) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.389rem; }
+}

@@ -1,0 +1,132 @@
+/* Photographers specific styles - ULTRA COMPACT VERTICAL TILES */
+
+.grid { 
+    margin-top: 5px; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+    gap: 15px; 
+    padding: 15px; 
+}
+
+.card { 
+    background: var(--bg2); 
+    padding: 12px 10px; 
+    border: 1px solid var(--border); 
+    border-radius: 16px; 
+    text-align: center; 
+    box-shadow: var(--shadow);
+    transition: all 0.2s ease;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    /* Dramatically reduced height to fit 2-3 rows easily */
+    min-height: 220px; 
+    max-height: 240px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
+    /* Transformace (pohyb nahoru) odstraněna */
+}
+
+.photog-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: inherit !important;
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px; 
+    border: 2px solid var(--accent);
+    padding: 2px;
+    background: var(--bg);
+    margin-bottom: 8px;
+    flex-shrink: 0;
+}
+
+.photog-info-text {
+    width: 100%;
+    overflow: hidden;
+}
+
+.card h4 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text-h);
+    margin: 0 0 4px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card p.photog-bio-short {
+    font-size: 11px;
+    margin: 0;
+    opacity: 0.6;
+    line-height: 1.3;
+    height: 28px; /* Strict 2 lines */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.photog-offer-section {
+    width: 100%;
+    margin-top: auto; 
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    box-sizing: border-box;
+}
+
+.offer-info {
+    margin-bottom: 6px;
+}
+
+.card h3 {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-h);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.offer-price {
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--accent);
+    margin: 0;
+}
+
+.offer-btn {
+    width: 100% !important;
+    padding: 6px !important;
+    font-size: 11px !important;
+    border-radius: 8px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-sizing: border-box !important;
+}
+
+.discover-header {
+    padding: 10px 15px 0 15px;
+}
+
+.discover-header h2 {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 500px) {
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .card { min-height: 200px; max-height: 220px; }
+}

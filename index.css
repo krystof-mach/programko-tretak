@@ -1,0 +1,159 @@
+/* Feed specific styles - macOS / Návrh style */
+
+.feed-container {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.feed-content-wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.photo-card {
+    background: var(--bg2);
+    border-radius: 24px;
+    padding: 0; /* Full width image style */
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.photo-card-header {
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+}
+
+.author-name {
+    font-weight: 700;
+    color: var(--text-h);
+    font-size: 15px;
+}
+
+.carousel {
+    width: 100%;
+    background-color: #000;
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden; /* Hide other images */
+    display: flex;
+    align-items: center;
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-out;
+}
+
+.slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex-shrink: 0; /* Important: prevents shrinking and keeps images side-by-side inside the flex container */
+}
+
+
+.prev, .next {
+    position: absolute; /* Umožní pozicování nad obrázkem */
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    /* Navrácen pointer kurzor pro indikaci klikatelnosti */
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+/* Tlačítka zůstávají vizuálně stejná i při najetí (žádná změna barvy nebo pohybu) */
+.prev:hover, .next:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-50%) !important;
+    filter: none !important;
+}
+
+
+
+.prev {
+    left: 15px; /* Šipka doleva na levou stranu */
+}
+
+.next {
+    right: 15px; /* Šipka doprava na pravou stranu */
+}
+
+
+.photo-info {
+    padding: 25px;
+}
+
+.interaction-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.like-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.heart-icon {
+    width: 26px;
+    height: 26px;
+    color: var(--text-h);
+    transition: all 0.2s;
+}
+
+.heart-icon.active {
+    color: #ff4444 !important;
+    fill: #ff4444 !important;
+}
+
+.likes-count {
+    font-weight: 800;
+    color: var(--text-h);
+    font-size: 15px;
+}
+
+
+.post-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-h);
+    margin-bottom: 10px;
+}
+
+.post-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.post-date {
+    font-size: 12px;
+    color: var(--text);
+    opacity: 0.5;
+    margin-top: 15px;
+}

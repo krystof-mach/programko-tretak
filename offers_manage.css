@@ -1,0 +1,11 @@
+.manage-container { margin-top: 12vh; width: 600px; margin-left: auto; margin-right: auto; }
+.card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 20px; }
+.manage-container input, .manage-container textarea { width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+.offer-item { border-bottom: 1px solid #eee; padding: 10px 0; display: flex; justify-content: space-between; }
+
+@media screen and (max-width: 768px) {
+    .manage-container {
+        width: 100%;
+        padding: 15px;
+    }
+}

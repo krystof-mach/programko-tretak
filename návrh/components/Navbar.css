@@ -1,0 +1,232 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.667rem 0;
+  transition: all 0.3s ease;
+  background: var(--bg);
+}
+
+.navbar.scrolled {
+  padding: 1.111rem 0;
+  background: rgba(245, 245, 247, 0.7);
+  backdrop-filter: blur(0.694rem);
+  -webkit-backdrop-filter: blur(0.694rem);
+}
+
+.nav-train-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  background: transparent;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.nav-train {
+  position: absolute;
+  bottom: 0.2rem;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-train-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-h);
+  opacity: 0.4;
+  letter-spacing: 0.05rem;
+}
+
+.nav-train-icon {
+  font-size: 1.2rem;
+  filter: grayscale(1) brightness(0.5);
+}
+
+.navbar-container {
+  width: 100%;
+  padding: 0 2.778rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navbar-logo a {
+  text-decoration: none;
+}
+
+.logo-text {
+  font-size: 1.944rem;
+  font-weight: 800;
+  color: var(--text-h);
+  letter-spacing: -0.069rem;
+}
+
+.navbar-links {
+  background: #f3f4f6;
+  padding: 0.278rem;
+  border-radius: 6.944rem;
+  display: flex;
+  align-items: center;
+  gap: 0.556rem;
+  position: relative;
+}
+
+.active-pill {
+  position: absolute;
+  background: rgb(235, 229, 70);
+  border-radius: 6.944rem;
+  z-index: 0;
+  transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  pointer-events: none;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--text-h);
+  font-weight: 500;
+  font-size: 1.042rem;
+  padding: 0.694rem 1.389rem;
+  border-radius: 6.944rem;
+  transition: opacity 0.2s ease, background 0.2s ease, color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar-links a:hover:not(.active) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.navbar-links a.active {
+  color: #000000;
+}
+
+.navbar-links a.active:hover {
+  opacity: 1;
+  filter: brightness(1.2);
+  transform: translateY(-0.069rem);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: #f3f4f6;
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem;
+  border-radius: 0.8rem;
+  color: var(--text-h);
+  transition: background 0.2s ease;
+}
+
+.hamburger-svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+
+.line {
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.hamburger-svg.open .top {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.hamburger-svg.open .middle {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger-svg.open .bottom {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+  background: rgba(15, 16, 20, 0.7);
+}
+[data-theme="dark"] .nav-train-track {
+  background: none !important;
+  border: none !important;
+}
+[data-theme="dark"] .nav-train-icon {
+  filter: grayscale(1) brightness(1.5);
+}
+[data-theme="dark"] .navbar-links {
+  background: #2e303a;
+}
+[data-theme="dark"] .mobile-menu-toggle {
+  background: #2e303a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .navbar.scrolled {
+    background: rgba(15, 16, 20, 0.7);
+  }
+  :root:not([data-theme="light"]) .nav-train-track {
+    background: none !important;
+    border: none !important;
+  }
+  :root:not([data-theme="light"]) .navbar-links {
+    background: #2e303a;
+  }
+  :root:not([data-theme="light"]) .mobile-menu-toggle {
+    background: #2e303a;
+  }
+}
+
+@media (max-width: 53.333rem) {
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 5rem;
+    right: 1.5rem;
+    flex-direction: column;
+    padding: 0.8rem;
+    border-radius: 1.2rem;
+    gap: 0.4rem;
+    transform: translateX(150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: var(--shadow);
+  }
+
+  .navbar-links.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.125rem);
+    z-index: 999;
+  }
+
+  .navbar-links a {
+    width: 100%;
+    padding: 0.6rem 1.2rem;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
