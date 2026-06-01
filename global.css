@@ -1,18 +1,18 @@
-/* DESIGN STYLE FROM 'NÁVRH' FOLDER - APPLIED TO PHOTO AHH */
+
 
 :root {
-  /* LIGHT MODE BARVY (default) */
+  
   --text-light: #6b6375;
   --text-h-light: #08060d;
   --bg-light: #e1e1e1;
   --bg2-light: #efefef;
   --border-light: #e5e4e7;
-  --accent-light: rgb(235, 229, 70); /* Yellow from návrh */
+  --accent-light: rgb(235, 229, 70); 
   --accent-hover: rgb(215, 209, 50);
   --shadow-light: rgba(0, 0, 0, 0.1) 0 0.694rem 1.042rem -0.208rem, rgba(0, 0, 0, 0.05) 0 0.278rem 0.417rem -0.139rem;
   --input-bg-light: #f9f9fb;
 
-  /* DARK MODE BARVY */
+  
   --text-dark: #9ca3af;
   --text-h-dark: #f3f4f6;
   --bg-dark: #16171d;
@@ -22,7 +22,7 @@
   --shadow-dark: rgba(0, 0, 0, 0.4) 0 0.694rem 1.042rem -0.208rem, rgba(0, 0, 0, 0.25) 0 0.278rem 0.417rem -0.139rem;
   --input-bg-dark: #1f2028;
 
-  /* ASSIGNMENT */
+  
   --text: var(--text-light);
   --text-h: var(--text-h-light);
   --bg: var(--bg-light);
@@ -35,7 +35,7 @@
   --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* GLOBAL MINIMAL SCROLLBAR */
+
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -54,7 +54,7 @@
     background: #999;
 }
 
-/* Firefox support */
+
 * {
     scrollbar-width: thin;
     scrollbar-color: #bbb transparent;
@@ -80,6 +80,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -89,7 +90,7 @@ a {
     transition: all 0.2s ease;
 }
 
-/* HEADER / NAVBAR (Fixed macOS style) */
+
 .navbar {
     width: 100%;
     height: 70px;
@@ -146,7 +147,7 @@ a {
     transform: scale(1.05);
 }
 
-/* MAIN LAYOUT */
+
 .main-layout {
     display: flex;
     flex: 1;
@@ -156,7 +157,7 @@ a {
     overflow: hidden;
 }
 
-/* SIDE NAV (Modern macOS sidebar) */
+
 .side-nav {
     width: 260px;
     height: 100%;
@@ -216,17 +217,31 @@ a {
 }
 .logout-btn-style i { color: #ef4444 !important; }
 
-/* CONTENT CONTAINERS */
-.feed-container, .profile-container, .admin-container, .cloud-container, .upload-container, .grid, .manage-container, .settings-container, .bookings-container {
+
+.feed-container, .profile-container, .admin-container, .cloud-container, .upload-container, .grid, .manage-container, .settings-container, .bookings-container, .dashboard-container, .discover-container {
     flex: 1;
-    padding: 40px;
     background-color: var(--bg);
     overflow-y: auto;
-    width: auto;
-    margin-top: 0;
+    width: 100%;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* MAC OS CARDS */
+.editor-container {
+    flex: 1;
+    width: 100%;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.content-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
 .card, .photo-card, .booking-card, .file-item, .settings-card, .admin-section {
     background: var(--bg2);
     border: 1px solid var(--border);
@@ -241,7 +256,7 @@ a {
     box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
 }
 
-/* BUTTONS (Návrh style) */
+
 button, .btn, .btn-login, .upload-btn, .edit-profile-btn, button[type="submit"] {
     display: inline-flex;
     align-items: center;
@@ -267,7 +282,7 @@ button:hover, .btn:hover, .btn-login:hover, .upload-btn:hover, .edit-profile-btn
 }
 
 
-/* FORM CONTROLS */
+
 input, textarea, select {
     font-family: inherit;
     font-size: 15px;
@@ -296,7 +311,7 @@ label {
     padding-left: 4px;
 }
 
-/* GLOBAL MODAL STYLES */
+
 .modal-overlay {
     display: none;
     position: fixed;
@@ -305,18 +320,18 @@ label {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.85);
-    z-index: 9999; /* Ensure it's above everything */
+    z-index: 9999; 
     justify-content: center;
-    align-items: center;
-    padding: 20px;
+    align-items: flex-start;
+    padding: 40px 20px;
     backdrop-filter: blur(8px);
     box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .modal-container {
     width: 100%;
     max-width: 1200px;
-    height: 90vh;
     background: var(--bg2);
     border: 1px solid var(--border);
     border-radius: 24px;
@@ -325,6 +340,8 @@ label {
     position: relative;
     box-shadow: var(--shadow);
     animation: modalAppear 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 @keyframes modalAppear {
@@ -340,7 +357,7 @@ label {
 }
 
 
-/* RESPONSIVE */
+
 @media screen and (max-width: 1024px) {
     .side-nav { width: 80px; padding: 20px 10px; }
     .nav-text { display: none; }
@@ -349,8 +366,122 @@ label {
 }
 
 @media screen and (max-width: 768px) {
-    .navbar { padding: 0 20px; }
+    .navbar { 
+        padding: 0 15px; 
+        height: 60px;
+        justify-content: space-between;
+    }
+    .logo-text { font-size: 16px; flex: 1; }
+    .user-profile { flex-shrink: 0; }
+    .profile-pic { width: 32px; height: 32px; }
+    
     .search-bar { display: none; }
     .side-nav { display: none; }
-    .content-wrapper { padding: 20px; }
+    
+    .main-layout {
+        margin-top: 60px;
+        margin-bottom: 70px; /* Space for bottom nav */
+        height: calc(100vh - 130px);
+        display: block !important; /* Switch from flex to block on mobile */
+        overflow-y: auto !important; /* Enable scrolling */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-bottom-nav {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: var(--bg2);
+        border-top: 1px solid var(--border);
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+        backdrop-filter: blur(10px);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .mobile-nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--text);
+        text-decoration: none;
+        flex: 1;
+        height: 100%;
+        opacity: 0.6;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-nav-link i {
+        width: 24px;
+        height: 24px;
+    }
+
+    .mobile-nav-link.active {
+        color: var(--accent);
+        opacity: 1;
+    }
+
+    /* Content adjustments */
+    .content-inner {
+        padding: 20px 15px;
+    }
+
+    .feed-container, .profile-container, .admin-container, .cloud-container, .upload-container, .grid, .manage-container, .settings-container, .bookings-container, .dashboard-container, .discover-container {
+        padding: 0 !important;
+    }
+
+    .dashboard-container { padding: 10px !important; }
+
+    .card, .photo-card, .booking-card, .file-item, .settings-card, .admin-section {
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+    }
+
+    /* Form and Button adjustments */
+    button, .btn, .upload-btn, .edit-profile-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        width: 100% !important; 
+        box-sizing: border-box;
+    }
+
+    /* Responsive Grids Overrides */
+    [style*="display: grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* Specific Page Fixes */
+    .dashboard-container .content-inner > div:first-child,
+    .dashboard-container section h3 {
+        text-align: center;
+    }
+
+    .profile-main-info { flex-direction: column !important; align-items: center !important; text-align: center; }
+    .profile-top-row { flex-direction: column !important; gap: 10px !important; }
+
+    /* Exception for specific grids that should stay 2 columns */
+    .profile-grid, .file-grid, #prev_grid, #mosaic_grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Header text adjustments */
+    h1 { font-size: 24px !important; }
+    h2 { font-size: 20px !important; }
+    h3 { font-size: 18px !important; }
+
+    /* Modal adjustments */
+    .modal-overlay { padding: 10px; }
+    .modal-container { border-radius: 20px; padding: 20px !important; }
+}
+
+.mobile-bottom-nav {
+    display: none;
 }

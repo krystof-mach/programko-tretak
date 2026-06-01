@@ -1,4 +1,4 @@
-/* Cloud specific styles - macOS / Návrh style */
+
 
 .cloud-container {
     padding: 40px;
@@ -130,7 +130,7 @@
     .quota-bar-container { width: 100%; }
 }
 
-/* Toast Notification Styles */
+
 .toast-popup {
     position: fixed;
     top: 20px;

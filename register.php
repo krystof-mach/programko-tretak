@@ -6,6 +6,7 @@ $error = "";
 $success = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    check_csrf();
     $full_name = $_POST['full_name'];
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -69,58 +70,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="register.css">
 </head>
-<body style="background-color: #f4f4f9; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 40px 0;">
-    <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 400px;">
-        <h1 style="color: #ffcc00; font-weight: 900; letter-spacing: -1px; text-align: center; margin-bottom: 20px;">PHOTO AHH</h1>
-        <h2 style="text-align: center; margin-top: 0;">Vytvořit účet</h2>
+<body>
+    <div class="register-container">
+        <h1 class="auth-logo">PHOTO AHH</h1>
+        <h2 class="auth-title">Vytvořit účet</h2>
         
-        <?php if($error) echo "<p style='color:red; font-weight:bold; text-align:center;'>$error</p>"; ?>
-        <?php if($success) echo "<p style='color:green; font-weight:bold; text-align:center;'>$success</p>"; ?>
+        <?php if($error) echo "<p class='error-msg'>" . htmlspecialchars($error, ENT_QUOTES, 'UTF-8') . "</p>"; ?>
+        <?php if($success) echo "<p class='success-msg'>" . htmlspecialchars($success, ENT_QUOTES, 'UTF-8') . "</p>"; ?>
         
         <form method="POST">
-            <div style="margin-bottom: 15px;">
-                <label style="display: block; font-size: 11px; font-weight: bold; color: #ffcc00; margin-bottom: 5px;">CELÉ JMÉNO</label>
-                <input type="text" name="full_name" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+            <div class="form-group">
+                <label>CELÉ JMÉNO</label>
+                <input type="text" name="full_name" required class="form-control">
             </div>
-            <div style="margin-bottom: 15px;">
-                <label style="display: block; font-size: 11px; font-weight: bold; color: #ffcc00; margin-bottom: 5px;">UŽIVATELSKÉ JMÉNO</label>
-                <input type="text" name="username" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+            <div class="form-group">
+                <label>UŽIVATELSKÉ JMÉNO</label>
+                <input type="text" name="username" required class="form-control">
             </div>
-            <div style="margin-bottom: 15px;">
-                <label style="display: block; font-size: 11px; font-weight: bold; color: #ffcc00; margin-bottom: 5px;">EMAIL</label>
-                <input type="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+            <div class="form-group">
+                <label>EMAIL</label>
+                <input type="email" name="email" required class="form-control">
             </div>
-            <div style="margin-bottom: 15px;">
-                <label style="display: block; font-size: 11px; font-weight: bold; color: #ffcc00; margin-bottom: 5px;">TELEFONNÍ ČÍSLO</label>
-                <input type="text" name="phone" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+            <div class="form-group">
+                <label>TELEFONNÍ ČÍSLO</label>
+                <input type="text" name="phone" class="form-control">
             </div>
-            <div style="margin-bottom: 15px;">
-                <label style="display: block; font-size: 11px; font-weight: bold; color: #ffcc00; margin-bottom: 5px;">DATUM NAROZENÍ</label>
-                <input type="date" name="birth_date" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+            <div class="form-group">
+                <label>DATUM NAROZENÍ</label>
+                <input type="date" name="birth_date" required class="form-control">
             </div>
             
-            <div style="margin-bottom: 15px;">
-                <label style="display: block; font-size: 11px; font-weight: bold; color: #ffcc00; margin-bottom: 5px;">CHCI SE REGISTROVAT JAKO:</label>
-                <select name="role_choice" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background: white;">
+            <div class="form-group">
+                <label>CHCI SE REGISTROVAT JAKO:</label>
+                <select name="role_choice" required class="form-control">
                     <option value="user">Běžný uživatel (Klient)</option>
                     <option value="author">Fotograf (Vyžaduje schválení)</option>
                 </select>
             </div>
 
-            <div style="margin-bottom: 15px;">
-                <label style="display: block; font-size: 11px; font-weight: bold; color: #ffcc00; margin-bottom: 5px;">HESLO</label>
-                <input type="password" name="password" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+            <div class="form-group">
+                <label>HESLO</label>
+                <input type="password" name="password" required class="form-control">
             </div>
-            <div style="margin-bottom: 20px;">
-                <label style="display: block; font-size: 11px; font-weight: bold; color: #ffcc00; margin-bottom: 5px;">POTVRZENÍ HESLA</label>
-                <input type="password" name="confirm_password" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+            <div class="form-group">
+                <label>POTVRZENÍ HESLA</label>
+                <input type="password" name="confirm_password" required class="form-control">
             </div>
             
-            <button type="submit" style="width: 100%; padding: 12px; background: #ffcc00; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">REGISTROVAT SE</button>
+            <button type="submit" class="btn-login">REGISTROVAT SE</button>
         </form>
         
-        <p style="margin-top: 20px; font-size: 14px; text-align: center;">
-            Již máte účet? <a href="login.php" style="color: #ffcc00; text-decoration: none; font-weight: bold;">Přihlaste se</a>
+        <p class="auth-footer">
+            Již máte účet? <a href="login.php">Přihlaste se</a>
         </p>
     </div>
 </body>

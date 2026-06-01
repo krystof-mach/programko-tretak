@@ -1,10 +1,7 @@
-/* Admin minimalist style based on macOS/Návrh style */
+
 
 .admin-container {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
 }
 
 .admin-section {
@@ -68,7 +65,7 @@ td:last-child {
     border-bottom-right-radius: 12px;
 }
 
-/* Standardized Buttons for Admin */
+
 .modal {
     display: none !important;
     position: fixed;
@@ -138,7 +135,7 @@ td:last-child {
     background-color: #b2f5ea;
 }
 
-/* Input tweaks for admin forms */
+
 .admin-input-small {
     padding: 6px 12px;
     font-size: 13px;

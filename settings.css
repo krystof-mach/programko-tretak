@@ -1,9 +1,7 @@
-/* Settings specific styles - macOS / Návrh style */
+
 
 .settings-container {
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    width: 100%;
 }
 
 .settings-container h2 {
@@ -36,7 +34,7 @@
     display: block;
     font-size: 13px;
     font-weight: 700;
-    color: var(--accent); /* Using accent for labels as in návrh */
+    color: var(--accent); 
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;

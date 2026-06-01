@@ -1,61 +1,80 @@
-/* Register minimalist overrides - macOS / Návrh style */
+
 
 body {
-    background-color: var(--bg) !important;
+    background-color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 60px 0;
 }
 
-div[style*="background: white"] {
-    background: var(--bg2) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 32px !important;
-    box-shadow: var(--shadow) !important;
-    width: 480px !important;
-    padding: 50px !important;
+.register-container {
+    width: 100%;
+    max-width: 480px;
+    background: var(--bg2);
+    padding: 50px;
+    border-radius: 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    text-align: center;
 }
 
-h1[style*="color: #ffcc00"] {
-    color: var(--text-h) !important;
-    background: none !important;
-    border: none !important;
-    font-size: 32px !important;
-    font-weight: 800 !important;
-    letter-spacing: -1.5px !important;
-    margin-bottom: 30px !important;
+.auth-logo {
+    color: var(--text-h);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 10px;
 }
 
-label[style*="color: #ffcc00"] {
-    color: var(--accent) !important;
-    font-size: 12px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    font-weight: 700 !important;
+.auth-title {
+    font-size: 20px;
+    color: var(--text-h);
+    margin-bottom: 40px;
+    font-weight: 700;
 }
 
-input, select {
-    border-radius: 12px !important;
-    border: 1px solid var(--border) !important;
-    background-color: var(--input-bg) !important;
-    padding: 12px !important;
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
 }
 
-button[style*="background: #ffcc00"] {
-    background: var(--accent) !important;
-    color: #000 !important;
-    border: none !important;
-    border-radius: 100px !important;
-    font-weight: 800 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    height: 50px !important;
-    margin-top: 20px !important;
+.form-group label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
-p[style*="margin-top: 20px"] {
-    margin-top: 30px !important;
-    color: var(--text) !important;
+.error-msg {
+    color: #ef4444;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 10px;
+    border-radius: 10px;
 }
 
-a[style*="color: #ffcc00"] {
-    color: var(--accent) !important;
-    font-weight: 800 !important;
+.success-msg {
+    color: #10b981;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.auth-footer {
+    margin-top: 30px;
+    color: var(--text);
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.auth-footer a {
+    color: var(--accent);
+    font-weight: 800;
 }

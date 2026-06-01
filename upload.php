@@ -9,6 +9,7 @@ $message = "";
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['photo_files'])) {
+    check_csrf();
     $files = $_FILES['photo_files'];
     $title = $_POST['title'];
     $description = $_POST['description'];
@@ -16,45 +17,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['photo_files'])) {
     
     $uploaded_paths = [];
     $allowed_ext = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
-    $max_size = 5 * 1024 * 1024; // 5MB per file
-    
-    $total_files = count($files['name']);
-    if ($total_files > 4) {
-        $error = "Maximálně lze nahrát 4 fotky.";
-    } elseif ($total_files < 1) {
-        $error = "Nahrajte alespoň jednu fotku.";
-    } else {
-        for ($i = 0; $i < $total_files; $i++) {
-            if ($files['error'][$i] === 0) {
-                $ext = strtolower(pathinfo($files['name'][$i], PATHINFO_EXTENSION));
-                if (in_array($ext, $allowed_ext) && $files['size'][$i] <= $max_size) {
-                    $filename = bin2hex(random_bytes(10)) . "." . $ext;
-                    $target_dir = "cloud/" . $user_id . "/";
-                    if (!file_exists($target_dir)) mkdir($target_dir, 0777, true);
-                    
-                    $target_path = $target_dir . $filename;
-                    if (move_uploaded_file($files['tmp_name'][$i], $target_path)) {
-                        $uploaded_paths[] = $target_path;
-                    }
-                } else {
-                    $error = "Některé soubory mají neplatný formát nebo jsou příliš velké.";
-                    break;
+    $max_size = 5 * 1024 * 1024; 
+
+    for ($i = 0; $i < count($files['name']); $i++) {
+        if ($files['error'][$i] === 0) {
+            $name = $files['name'][$i];
+            $ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+            if (in_array($ext, $allowed_ext) && $files['size'][$i] <= $max_size) {
+                $new_name = bin2hex(random_bytes(10)) . "." . $ext;
+                $target = "posts/" . $new_name;
+                if (move_uploaded_file($files['tmp_name'][$i], $target)) {
+                    $uploaded_urls[] = $target;
                 }
             }
         }
     }
-    
-    if (empty($error) && !empty($uploaded_paths)) {
-        $first_url = $uploaded_paths[0];
-        $all_urls = json_encode($uploaded_paths);
-        
-        $stmt = $conn->prepare("INSERT INTO posts (user_id, file_path, urls, title, description) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("issss", $user_id, $first_url, $all_urls, $title, $description);
+
+    if (!empty($uploaded_urls)) {
+        $first_url = $uploaded_urls[0];
+        $urls_json = json_encode($uploaded_urls);
+        $stmt = $conn->prepare("INSERT INTO posts (user_id, title, description, file_path, urls) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("issss", $user_id, $title, $description, $first_url, $urls_json);
         if ($stmt->execute()) {
             $message = "Příspěvek byl úspěšně zveřejněn!";
         } else {
             $error = "Chyba při ukládání do databáze.";
         }
+    } else {
+        $error = "Nebyla nahrána žádná platná fotka.";
     }
 }
 ?>
@@ -67,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['photo_files'])) {
         <?php if($error) echo "<p style='color:red; font-weight:bold; text-align:center;'>$error</p>"; ?>
         
         <form method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
             <div style="margin-bottom: 15px;">
                 <label style="display: block; font-weight: bold; margin-bottom: 5px;">Název příspěvku</label>
                 <input type="text" name="title" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">

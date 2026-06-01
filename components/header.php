@@ -6,7 +6,7 @@ require_once __DIR__ . '/connector.php';
 
 $is_logged_in = isset($_SESSION['user_id']);
 
-// VALIDACE RELACE (pokud se změní heslo v DB, odhlásíme uživatele)
+
 if ($is_logged_in) {
     $uid = $_SESSION['user_id'];
     $session_pass = isset($_SESSION['password']) ? $_SESSION['password'] : '';
@@ -23,7 +23,7 @@ if ($is_logged_in) {
             exit();
         }
     } else {
-        // Uživatel už neexistuje
+        
         session_destroy();
         header("Location: login.php");
         exit();
@@ -34,7 +34,7 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : 'user';
 $user_avatar = isset($_SESSION['avatar']) ? $_SESSION['avatar'] : "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y";
 $is_admin = ($role === 'admin');
 
-// Možnost nastavit vlastní titulek stránky
+
 $page_title = isset($custom_title) ? $custom_title : "photo ahh stránka";
 ?>
 <!DOCTYPE html>
@@ -47,8 +47,12 @@ $page_title = isset($custom_title) ? $custom_title : "photo ahh stránka";
     <?php if (isset($extra_css)) echo '<link rel="stylesheet" href="'.$extra_css.'">'; ?>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        const CSRF_TOKEN = '<?php echo $_SESSION['csrf_token']; ?>';
+    </script>
 </head>
 <body>
     <?php include __DIR__ . '/navbar.php'; ?>
     <div class="main-layout">
         <?php include __DIR__ . '/sidebar.php'; ?>
+        <?php include __DIR__ . '/mobile_nav.php'; ?>

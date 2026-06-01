@@ -9,6 +9,7 @@ if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['author', 'adm
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['post_files'])) {
+    check_csrf();
     $user_id = $_SESSION['user_id'];
     $title = $_POST['title'] ?? '';
     $description = $_POST['description'] ?? '';
@@ -38,14 +39,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['post_files'])) {
                 if (move_uploaded_file($files['tmp_name'][$i], $disk_path)) {
                     $uploaded_urls[] = $web_path;
                     
-                    // Metadata pro každou fotku
                     $image_info = getimagesize($disk_path);
+                    $exif_data = [];
+                    if ($ext === 'jpg' || $ext === 'jpeg') {
+                        $exif = @exif_read_data($disk_path);
+                        if ($exif) {
+                            $exif_data = [
+                                'make' => $exif['Make'] ?? '',
+                                'model' => $exif['Model'] ?? '',
+                                'exposure' => $exif['ExposureTime'] ?? '',
+                                'aperture' => $exif['COMPUTED']['ApertureFNumber'] ?? '',
+                                'iso' => $exif['ISOSpeedRatings'] ?? '',
+                                'date' => $exif['DateTimeOriginal'] ?? ''
+                            ];
+                        }
+                    }
+                    
                     $all_metadata[] = [
                         'original_name' => $files['name'][$i],
                         'mime' => $files['type'][$i],
                         'size' => $files['size'][$i],
                         'width' => $image_info[0] ?? 0,
-                        'height' => $image_info[1] ?? 0
+                        'height' => $image_info[1] ?? 0,
+                        'exif' => $exif_data
                     ];
                 }
             }
@@ -57,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['post_files'])) {
         $urls_json = json_encode($uploaded_urls);
         $metadata_json = json_encode($all_metadata);
 
-        // Uložení do tabulky 'posts'
+        
         $stmt = $conn->prepare("INSERT INTO posts (user_id, title, description, file_path, urls, metadata) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("isssss", $user_id, $title, $description, $first_url, $urls_json, $metadata_json);
         

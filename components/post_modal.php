@@ -45,6 +45,7 @@ function moveSlideModal(direction) {
 function toggleLikeModal(postId) {
     const formData = new FormData();
     formData.append('post_id', postId);
+    formData.append('csrf_token', CSRF_TOKEN);
 
     fetch('toggle_like.php', {
         method: 'POST',

@@ -1,4 +1,4 @@
-/* Feed specific styles - macOS / Návrh style */
+
 
 .feed-container {
     width: 100%;
@@ -13,7 +13,7 @@
 .photo-card {
     background: var(--bg2);
     border-radius: 24px;
-    padding: 0; /* Full width image style */
+    padding: 0; 
     overflow: hidden;
     margin-bottom: 40px;
 }
@@ -23,6 +23,13 @@
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.author-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
 }
 
 .author-avatar {
@@ -43,7 +50,7 @@
     background-color: #000;
     position: relative;
     aspect-ratio: 1;
-    overflow: hidden; /* Hide other images */
+    overflow: hidden; 
     display: flex;
     align-items: center;
 }
@@ -59,12 +66,12 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    flex-shrink: 0; /* Important: prevents shrinking and keeps images side-by-side inside the flex container */
+    flex-shrink: 0; 
 }
 
 
 .prev, .next {
-    position: absolute; /* Umožní pozicování nad obrázkem */
+    position: absolute; 
     top: 50%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.2) !important;
@@ -79,12 +86,12 @@
     align-items: center;
     justify-content: center;
     z-index: 10;
-    /* Navrácen pointer kurzor pro indikaci klikatelnosti */
+    
     cursor: pointer;
     pointer-events: auto;
 }
 
-/* Tlačítka zůstávají vizuálně stejná i při najetí (žádná změna barvy nebo pohybu) */
+
 .prev:hover, .next:hover {
     background: rgba(255, 255, 255, 0.2) !important;
     transform: translateY(-50%) !important;
@@ -94,11 +101,11 @@
 
 
 .prev {
-    left: 15px; /* Šipka doleva na levou stranu */
+    left: 15px; 
 }
 
 .next {
-    right: 15px; /* Šipka doprava na pravou stranu */
+    right: 15px; 
 }
 
 

@@ -5,6 +5,7 @@ require_once 'components/connector.php';
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    check_csrf();
     $user = $_POST['username'];
     $pass = $_POST['password'];
 
@@ -36,15 +37,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="login.css">
 </head>
-<body style="background-color: #f4f4f9;">
+<body>
     <div class="login-container">
         <h1 style="color: #ffcc00; font-weight: 900; letter-spacing: -1px; margin-bottom: 30px;">PHOTO AHH</h1>
         
         <?php if($error): ?>
-            <p style="color: red; font-weight: bold;"><?php echo $error; ?></p>
+            <p style="color: red; font-weight: bold;"><?php echo htmlspecialchars($error); ?></p>
         <?php endif; ?>
 
         <form method="POST">
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
             <div class="form-group">
                 <label>UŽIVATELSKÉ JMÉNO</label>
                 <input type="text" name="username" required class="form-control">

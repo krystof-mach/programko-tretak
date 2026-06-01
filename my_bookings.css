@@ -1,4 +1,4 @@
-/* Bookings specific styles - macOS / Návrh style */
+
 
 .bookings-container {
     width: 100%;
@@ -51,7 +51,7 @@
     flex-wrap: wrap;
 }
 
-/* Button variants for bookings */
+
 .btn-status {
     padding: 10px 20px;
     border-radius: 100px;

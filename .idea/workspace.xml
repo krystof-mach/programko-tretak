@@ -4,7 +4,68 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98e4d31c-a73a-40f6-a9c6-8a8f617cc87e" name="Changes" comment="" />
+    <list default="true" id="98e4d31c-a73a-40f6-a9c6-8a8f617cc87e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitnami.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/change_admin_pass.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud.css" beforeDir="false" afterPath="$PROJECT_DIR$/cloud.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud.php" beforeDir="false" afterPath="$PROJECT_DIR$/cloud.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69ce9f959469a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69ce9f9bb7a54.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69ce9fa05af30.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69cea04295647.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69cea0603f220.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69cea0e032d48.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69cea0ff18eb7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69cea11db8bb8.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69cea15666af2.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69cea15b1ea05.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69cea166458fa.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69cea19375f28.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69cea1a5bd0a2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/1/69cea2220042b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/connector.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/connector.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/post_modal.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/post_modal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_booking_action.php" beforeDir="false" afterPath="$PROJECT_DIR$/create_booking_action.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download_booking_zip.php" beforeDir="false" afterPath="$PROJECT_DIR$/download_booking_zip.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fix_roles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fix_storage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_post_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/get_post_detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_passwords.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_bookings.css" beforeDir="false" afterPath="$PROJECT_DIR$/my_bookings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_bookings.php" beforeDir="false" afterPath="$PROJECT_DIR$/my_bookings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/offers_manage.css" beforeDir="false" afterPath="$PROJECT_DIR$/offers_manage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/offers_manage.php" beforeDir="false" afterPath="$PROJECT_DIR$/offers_manage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photographers.css" beforeDir="false" afterPath="$PROJECT_DIR$/photographers.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photographers.php" beforeDir="false" afterPath="$PROJECT_DIR$/photographers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/settings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.php" beforeDir="false" afterPath="$PROJECT_DIR$/setup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup_cloud.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup_likes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup_requests.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/toggle_follow.php" beforeDir="false" afterPath="$PROJECT_DIR$/toggle_follow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toggle_like.php" beforeDir="false" afterPath="$PROJECT_DIR$/toggle_like.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/update_booking_status.php" beforeDir="false" afterPath="$PROJECT_DIR$/update_booking_status.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload_post_action.php" beforeDir="false" afterPath="$PROJECT_DIR$/upload_post_action.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +74,21 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;krystof-mach&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/krystof-mach/programko-tretak.git&quot;,
+    &quot;accountId&quot;: &quot;54959089-d001-4af1-b9f8-c0c4bdade24c&quot;
+  }
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -26,32 +102,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "javascript.preferred.runtime.type.id": "node",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/xampp/htdocs",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.24374.125" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-WS-251.26094.131" />
       </set>
     </attachedChunks>
   </component>
@@ -68,6 +146,8 @@
       <workItem from="1777031541016" duration="22294000" />
       <workItem from="1777269949017" duration="1370000" />
       <workItem from="1779696807548" duration="9716000" />
+      <workItem from="1780092746391" duration="9000" />
+      <workItem from="1780321296114" duration="1110000" />
     </task>
     <servers />
   </component>
